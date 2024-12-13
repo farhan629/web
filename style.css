@@ -1,0 +1,198 @@
+/* General Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background: url('gm.webp') no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+    overflow-x: hidden; /* Allow vertical scrolling */
+    position: relative;
+}
+
+/* Background Hearts */
+@keyframes float-hearts {
+    0% {
+        transform: translateY(100vh) scale(0.5);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) scale(1);
+        opacity: 0;
+    }
+}
+
+.heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle, #ff99cc, #ff3366);
+    transform: rotate(45deg);
+    animation: float-hearts 8s infinite;
+    z-index: 0; /* Ensure hearts stay in the background */
+}
+
+.heart::before, .heart::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle, #ff99cc, #ff3366);
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -10px;
+    left: 0;
+}
+
+.heart::after {
+    left: -10px;
+    top: 0;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(255, 182, 193, 0.8);
+    border-radius: 10px;
+    margin: 20px auto;
+    width: 80%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    z-index: 1; /* Bring above the hearts */
+}
+
+header h1 {
+    color: #ff0066; /* Brighter pink for better contrast */
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Main Content */
+.container {
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    text-align: justify;
+    z-index: 1; /* Ensure it stays above floating hearts */
+    background: linear-gradient(to right, rgba(255, 228, 225, 0.7), rgba(255, 240, 245, 0.7));
+    border-left: 5px solid #ff1493;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    font-size: 1.2rem;
+    color: #660033; /* Deep wine for excellent contrast */
+    line-height: 1.8;
+}
+
+
+
+.highlight {
+    color: #ff1493; /* Hot pink for emphasis */
+    font-weight: bold;
+    text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.7);
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    margin-top: 20px;
+    color: #ffccff; /* Pastel pink for soft contrast */
+    font-weight: bold;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+/* Balloons Styles */
+.balloon {
+    position: absolute;
+    bottom: -100px;
+    width: 50px;
+    height: 70px;
+    background: radial-gradient(circle, #ff69b4, #ff1493);
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    animation: float 5s linear infinite;
+}
+
+.balloon.red {
+    background: radial-gradient(circle, #ff4d4d, #ff1a1a);
+}
+
+.balloon.blue {
+    background: radial-gradient(circle, #4da6ff, #1a75ff);
+}
+
+.balloon.green {
+    background: radial-gradient(circle, #4dff88, #1aff5e);
+}
+
+.balloon.yellow {
+    background: radial-gradient(circle, #ffff4d, #ffeb1a);
+}
+
+.balloon.purple {
+    background: radial-gradient(circle, #d9b3ff, #a64dff);
+}
+
+.balloon::before {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    width: 2px;
+    height: 30px;
+    background: #ff69b4;
+    transform: translateX(-50%);
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh);
+        opacity: 0;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        width: 90%;
+    }
+
+    .container {
+        width: 90%;
+    }
+
+    .letter {
+        font-size: 1rem;
+        padding: 15px;
+    }
+}
+
+/* Floating Hearts Spawning */
+@keyframes spawn-hearts {
+    0% {
+        transform: scale(0.8);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0.8);
+        opacity: 0.5;
+    }
+}
+
+.heart {
+    animation: float-hearts 8s linear infinite, spawn-hearts 3s ease-in-out infinite alternate;
+}

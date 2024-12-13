@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Aasa Orave</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <header>
+        <h1>Happy Birthday Aasa Orave!</h1>
+    </header>
+
+    <div class="container">
+        <p class="letter">
+Dear <span class="highlight">Aasa Orave</span>,</br>
+
+Hi, How are you? Na nalla iruken da. And please don't get angry while reading this letter, Satiyama unna kovapadanum laam illa da, please kovapadhaaa... Dei unnoda pesi 8 months aachu da. Na oru naal maximum unnoda pesama irundhiruken like exams nu, appo kooda nee call panirve pesanum nu nenachu. Semesters mudichuten da na, nalla eludhirken exams. Na eppo semester 6 da, paaren nee "Hey 2nd year poita di nee" nu sonna maari iruku hmmm...
+
+First, sorry da, na Sakthi anna kitta pesunadhu unnaku pudikala nu theriyum, but adhum ellame na create panna story. Nee veetla nandha reason keta feel pannirve, so idhu theriyakooda nu na apdi panninen. <span class="highlight">Rithanyaa kutty</span> mela promise. En mela rombo pasama irundhiya nee, unta solra alavuku dhairiyam illa da ennaku. So nee en mela irundhu good things laam will go away from you nu, na loosu maari panniten. But eppo rombo rombo rombo miss pandren unna na.
+
+Ennaku oru happy news or kavala padra maan edachu nadandha na unnoda photo paathu soluven da because unna maari yaarum vaara maatanga da "Avala pathukonga" nu nee sonniya Aishu ta, ava sonna "Ente bro unnu mela evalo pasam vachirkarunu."
+
+I love you, I miss you, I will give you a surprise nu. Indha three sentences nee dhaan da ennaku first sonna. Ennaku enga mumma na uyiru, adhuku apram my own kutty family list la sethuko, and neeyum dhaan.
+
+1 year 2 months & days achu. Surprise kodupe nu solli. Nee epdi sonnadhe, very happy dhaan the surprise. I am always happy, like I have been on the receiving side for the first time ever in my lifetime.
+
+Unnaku enna na rombo pudikum da? Nee first time veetla problem aanadhu la irundhu enna support pannitu en kooda da iruken. Aanaaaa epdi unnaku thonadhe illa ya, evalo laam namma edhuku support pannanu. Thank you sooo much for supporting me always. Laptop sari adichu da, eppo dhaan padika easy ahh iruku.
+
+Apram next, nee eppovum aasa padhuvela, na enna pudicha course paadikanum nu, va padhika poren theriyuma. Nee onnu worry pannikaadha da, unnaku nalla future irukum na, ella god tayum vedhirken da, nee kavala padha please. Navya Shreya kooda kavala padha. Oli aitada nee, olunga sapdu da sariya...
+
+Unnoda boom mukiyam la, ente sonna maan mudhi valakiriya appo na poi mudhalaya out pannu. Palaya maari iru da. Na good girl ahh irupen also naala padhipen. Adha pathi worry pannadra. Enna unta pesanum nu thonudhu, nee "Solludi" nu sollu. Evolo naal achu but paravala, adhuku oru time varum.
+
+Main matter solla marandhe paaru—<span class="highlight">Happy Birthday, Ammu!</span> Unna ammu nu koopadhrun nu aasa, so koopten. Kochikadha, sorry. Saptiya di? Thoongu di, miss you. I will buy you kelamthando. I want to be your dalo apdi nu nariya sollirka. I am really happy for it, and nee modhala, iniki birthday baby happy ahh irukanum. Unnoda sota mandha wish pannirken la.
+
+Everyone finds a reason to make me cry, but he finds a reason to make me smile—that's you, only you. Ennaku Feb 4 birthday varum la, that too 20th birthday. Nee kandipa wish pannu, please, please, please! Reminder vena podren. Modhala idhu my friend dhaan school la irundhu theriyum, like the one who sent you this.
+
+Apram sorry, unna disturb pannanum laam nenakale—sorry! Kochikadha please. Evolo sonnadhu-ku onnu "Thank you" achu podu da please. Thethiradha, please ennala thangave mudiyadhu. Nee thethuna na...
+
+Once again, happy birthday to my most favorite god's gift. "Hey sota mandha di nee, kutta di nee, heyy loosu, nee aludha phone cut panniruven di," idhulaam rombo miss pandren.
+
+Sorry again for everything and now this letter, kovapadha please, please, please...
+        </br>
+        <div class="heart" style="left: 10%; animation-delay: 0s;"></div>
+<div class="heart" style="left: 20%; animation-delay: 2s;"></div>
+<div class="heart" style="left: 30%; animation-delay: 4s;"></div>
+
+    </br>
+</br>
+
+With love, 
+<span class="highlight">Navya Shreya</span>
+        </p>
+    </div>
+</p>
+
+    <div class="footer">
+        <p>Made with love by Navya Shreya</p>
+    </div>
+</body>
+<script>
+    const colors = ['red', 'blue', 'green', 'yellow', 'purple'];
+
+    document.addEventListener('click', (event) => {
+        createBalloon(event.clientX, event.clientY);
+    });
+
+    function createBalloon(x, y) {
+        const balloon = document.createElement('div');
+        const randomColor = colors[Math.floor(Math.random() * colors.length)];
+        balloon.className = `balloon ${randomColor}`;
+        balloon.style.left = `${x}px`;
+        balloon.style.top = `${y}px`;
+
+        document.body.appendChild(balloon);
+
+        setTimeout(() => {
+            balloon.remove();
+        }, 5000); // Balloon disappears after 5 seconds
+    }
+    function createHeart() {
+        const heart = document.createElement('div');
+        heart.className = 'heart';
+        heart.style.left = Math.random() * 100 + 'vw'; // Random horizontal position
+        heart.style.animationDelay = Math.random() * 5 + 's'; // Random animation delay
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove(); // Remove the heart after animation ends to avoid memory leaks
+        }, 8000); // Match the animation duration
+    }
+
+    // Generate a new heart every second
+    setInterval(createHeart, 1000);
+
+</script>
+
+</html>
